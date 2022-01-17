@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        SPLI
+        <br>
+        TTER
+    </header>
+    <div class="main-container">
+        <div class="show-billing">
+            <div class="bill">
+                <label for="bill">Bill</label>
+                <span class="bill-error"></span>
+                <input type="text" id="bill" placeholder="0" class="inputs">
+            </div>
+            <div class="tip">
+                <div class="tip-text">Select Tip %</div>
+                <div class="tip-container">
+                    <button class="tip-btn" value="0.05">5%</button>
+                    <button class="tip-btn" value="0.1">10%</button>
+                    <button class="tip-btn" value="0.15">15%</button>
+                    <button class="tip-btn" value="0.25">25%</button>
+                    <button class="tip-btn" value="0.50">50%</button>
+                    <input type="text" placeholder="Custom" id="custom" class="inputs">
+                </div>
+            </div>
+            <div class="people">
+                <label for="people">Number of People</label>
+                <span class="people-error"></span>
+                <input type="text" placeholder="0" class="inputs" id="people">
+            </div>
+        </div>
+        <div class="show-amount">
+            <div>
+                <div class="per-person">
+                    <div class="person-text">
+                        <div class="text">Tip Amount</div>
+                        <div class="person">/ person</div>
+                    </div>
+                    <div class="tip-per-person"><span class="dollar">$</span><span class="amount"></span></div>
+                </div>
+                <div class="per-person">
+                    <div class="person-text">
+                        <div class="text">Total</div>
+                        <div class="person">/ person</div>
+                    </div>
+                    <div class="total-per-person"><span class="dollar">$</span><span class="amount"></span></div>
+                </div>
+            </div>
+            <div class="reset-btn">
+                <button class="reset">RESET</button>
+            </div>
+        </div>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>

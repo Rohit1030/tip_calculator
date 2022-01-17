@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --color: hsl(172, 67%, 45%);
+    --resetColor: hsl(186, 14%, 43%);
+    --resetHover:  hsl(186, 14%, 43%);
+    --cursor: default;
+    --btnBackground: hsl(183, 100%, 15%);
+    --btnColor: hsl(189, 41%, 97%);
+}
+
+body {
+    background-color: hsl(185, 41%, 84%);
+}
+
+header {
+    font-size: 1.2rem;
+    font-weight: 600;
+    letter-spacing: 5px;
+    color: hsl(180, 7%, 40%);
+    text-align: center;
+}
+
+.main-container {
+    background-color: white;
+    width: 95%;
+    padding: 24px;
+    border-radius: 25px;
+    
+}
+
+input[type="text"] {
+    font-size: 24px;
+    background-color: hsl(180, 100%, 96%);
+    text-align: right;
+    padding: 0.25rem 1rem;
+    border-radius: 5px;
+    color: hsl(183, 100%, 15%);
+    cursor: pointer;
+}
+
+.bill > input[type="text"], .people > input[type="text"] {
+    width: 100%;
+    margin-top: 0.5rem;
+    display: block;
+}
+
+input[type="text"], button, label, .tip-text {
+    font-weight: 700;
+    border: none;
+}
+
+body, input[type="text"], button {
+    font-family: 'Space Mono', monospace;
+}
+
+label, .tip-text {
+    color: grey;
+    font-size: 0.85rem;
+}
+
+.bill, .people {
+    position: relative;
+}
+
+.bill-error, .people-error {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: rgb(238, 120, 120);
+    position: absolute;
+    right: 0;
+    top: 3.5%;
+    display: none;
+}
+
+.bill > input[type="text"] {
+    background-image: url("./images/icon-dollar.svg");
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+}
+
+.people > input[type="text"] {
+    background-image: url("./images/icon-person.svg");
+    background-repeat: no-repeat;
+    background-position: 5% 50%;
+}
+
+.tip button {
+    background-color: var(--btnBackground);
+    color: var(--btnColor);
+    font-size: 24px;
+    border-radius: 7px;
+    padding: 5px 0;
+    cursor: pointer;
+    transition: all 0.25s ease-out;
+}
+
+.tip {
+    margin: 2rem 0;
+}
+
+.show-amount {
+    background-color: hsl(183, 100%, 15%);
+    padding: 2rem 1rem 1rem 1rem;
+    border-radius: 15px;
+}
+
+.text {
+    color: hsl(185, 41%, 84%);
+    font-weight: 600;
+}
+
+.person {
+    color: hsl(185, 16%, 54%);
+    font-weight: 600;
+}
+
+.tip-per-person,.total-per-person {
+    color: hsl(172, 67%, 45%);
+    font-weight: 700;
+}
+
+.person-text {
+    font-size: 0.85rem;
+}
+
+.per-person {
+    display: flex;
+    justify-content: space-between;
+} 
+
+.dollar {
+    font-size: 29px;
+}
+
+.amount {
+    font-size: 34px;
+}
+
+.reset {
+    width: 100%;
+    background-color: var(--resetColor);
+    font-size: 17.5px;
+    padding: 0.5rem 0;
+    color: hsl(183, 100%, 15%);
+    font-weight: 700;
+    border-radius: 5px;
+    cursor: var(--cursor);
+    transition: all 0.25s ease-out;
+}
+
+.reset:hover {
+    background-color: var(--resetHover);
+}
+
+.tip-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#custom {
+    border-radius: 7px;
+}
+
+input:focus{
+    outline: 2px solid var(--color);
+}
+
+.tip button:hover{
+    background-color: hsl(185, 41%, 84%);
+    color: hsl(183, 100%, 15%);
+}
+
+@media (max-width:767.9px) {
+    .main-container {
+        margin: 2rem auto 0 auto;
+        max-width: 353px;
+    }
+
+    .show-amount {
+        margin-top: 2rem;
+    }
+
+    body {
+        padding: 3rem 0;
+    }
+
+    .reset-btn {
+        margin-top: 1.5rem;
+    }
+
+    .tip button {
+        width: 47.5%;
+        margin-top: 0.7rem;
+    }
+
+    #custom {
+        width: 47.5%;
+        height: 46px;
+        margin-top: 0.7rem;
+    }
+
+    .per-person + .per-person {
+        margin-top: 0.8rem;
+    }
+}
+
+@media (min-width:768px){
+    header {
+        position: absolute;
+        top: 12%;
+        left: 50%;
+        transform: translate(-12%, -50%);
+    }
+
+    .main-container {
+        max-width: 729.6px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .show-billing, .show-amount {
+        width: 48.5%;
+    }
+
+    .tip button {
+        width: 32%;
+        font-size: 20px;
+        margin-top: 0.6rem;
+    }
+
+    #custom {
+        width: 32%;
+        font-size: 20px;
+        margin-top: 0.6rem;
+    }
+
+    .show-amount {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .per-person + .per-person {
+        margin-top: 2rem;
+    }
+}
